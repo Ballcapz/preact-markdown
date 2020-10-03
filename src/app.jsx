@@ -1,9 +1,10 @@
 import { Editor } from './Editor';
 import { Preview } from './Preview';
 import { useState } from 'preact/hooks';
+import { useLocalStorage } from './hooks/useLoaclStorage';
 
 export function App(props) {
-  const [markdownContent, setMarkdownContent] = useState('# Type Here');
+  const [markdownContent, setMarkdownContent] = useLocalStorage('markdown', '# Hello');
 
   return (
     <>
